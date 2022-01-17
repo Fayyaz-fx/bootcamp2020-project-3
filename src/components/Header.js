@@ -1,7 +1,7 @@
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-
+import { Link } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 import InputBase from '@material-ui/core/InputBase'
 import { alpha, makeStyles } from '@material-ui/core/styles'
@@ -9,18 +9,20 @@ import { alpha, makeStyles } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/Search'
 
 import { FaShoePrints } from 'react-icons/fa'
+import { FaOpencart } from 'react-icons/fa'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
-    marginLeft: theme.spacing(16),
+    marginLeft: theme.spacing(20),
   },
   title: {
     flexGrow: 1,
     display: 'none',
+    textDecoration: 'none',
+    color: 'white',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -33,8 +35,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
-    marginLeft: 0,
-    marginRight: theme.spacing(16),
+    marginRight: theme.spacing(2),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),
@@ -51,6 +52,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  links: {
+    marginRight: '2rem',
+    color: 'white',
+  },
+
   inputRoot: {
     color: 'inherit',
   },
@@ -77,10 +83,21 @@ export default function Header() {
       <AppBar position='static'>
         <Toolbar className={classes.menuButton}>
           <FaShoePrints fontSize='large' />
-          <Typography className={classes.title} variant='h5' noWrap>
-            Shoe Mian
-          </Typography>
-
+          <Link to='/' className={classes.title}>
+            <Typography variant='h5' noWrap>
+              Shoe Mian
+            </Typography>{' '}
+          </Link>
+          {/* <Link className={classes.links} to='/products'>
+            Products
+          </Link> */}
+          <Link className={classes.links} to='/about'>
+            About
+          </Link>
+          <Link className={classes.links} to='/cart'>
+            Cart
+            {/* <FaOpencart size={25} color={'red'} /> */}
+          </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

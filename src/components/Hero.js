@@ -44,10 +44,10 @@ const Hero = () => {
           alignItems='center'
           color='#fff'
         >
-          <Typography variant='h2' component='h2' className={classes.title}>
+          <Typography variant='h1' component='h1' className={classes.title}>
             Shoe Mian
           </Typography>
-          <Typography variant='h6' component='h4' className={classes.title}>
+          <Typography variant='h6' component='h6' className={classes.title}>
             style, comfort and satisfaction guranted
           </Typography>
         </Box>

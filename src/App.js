@@ -1,16 +1,18 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
-
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Layout from './components/Layout'
+import Footer from './components/Footer'
+import { CartProvider } from './context/CartContext'
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <Header />
       <Hero />
-      <Layout />
-    </>
+      <Outlet />
+      <Footer />
+    </CartProvider>
   )
 }
 

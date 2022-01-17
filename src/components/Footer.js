@@ -1,11 +1,26 @@
-import React from 'react'
+import { AppBar, Container, Toolbar, Typography } from '@material-ui/core'
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <div>
-      <h1>Footer section</h1>
-    </div>
+    <AppBar position='static' color='primary' style={{ marginTop: 20 }}>
+      <Container maxWidth='md'>
+        <Toolbar>
+          <Typography
+            variant='body1'
+            color='inherit'
+            style={{ margin: 'auto' }}
+          >
+            © 2022 Shoe Mian
+          </Typography>
+          <Typography
+            variant='body1'
+            color='inherit'
+            style={{ margin: 'auto' }}
+          >
+            Developed by: BizzTechs
+          </Typography>
+        </Toolbar>
+      </Container>
+    </AppBar>
   )
 }
-
-export default Footer
