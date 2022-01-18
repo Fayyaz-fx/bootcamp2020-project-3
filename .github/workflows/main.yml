@@ -40,7 +40,7 @@ jobs:
       # - name: Build of the App
       #   run: yarn build
       - name: Build of the App
-        run: npm run build
+        run: CI=false && npm run build
 
       - name: Install Surge
         run: npm install -g surge
