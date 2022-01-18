@@ -63,10 +63,10 @@ const ProductsList = () => {
         <Grid item xs={12} sm={10}>
           <Grid container item xs={12} spacing={1}>
             {' '}
-            {products.map((shoe) => {
+            {products.map((shoe, index) => {
               const { name, imageURL, price, itemCode } = shoe
               return (
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} key={index}>
                   <Link to={`${itemCode}`}>
                     <h2>{name}</h2>
                     <img src={imageURL} alt={name} width='70%' height='50%' />
