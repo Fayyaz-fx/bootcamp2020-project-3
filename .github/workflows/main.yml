@@ -31,16 +31,19 @@ jobs:
       - name: Install node Modules
         run: npm install
 
-      - name: Download Yarn package manager
-        run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+      # - name: Download Yarn package manager
+      #   run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-      - name: Install Yarn package manager
-        run: sudo apt update && sudo apt install yarn
+      # - name: Install Yarn package manager
+      #   run: sudo apt update && sudo apt install yarn
 
+      # - name: Build of the App
+      #   run: yarn build
       - name: Build of the App
-        run: yarn build
+        run: npm run build
+
       - name: Install Surge
-        run: yarn global add surge
+        run: npm install -g surge
 
       - name: Deployment to Surge
         run: surge ./build bootcamp2020-proj-03-bizztechs.surge.sh --token ${{secrets.SURGE_TOKEN}}
